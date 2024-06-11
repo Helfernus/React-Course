@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Components Browser</title>
+    <link rel="stylesheet" href="./src/main.css" />
+    <script src="./src/header.js" type="module"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header__top">
+            <div class="header__logo">
+                <a href="${rootPageUrl}">
+                    <img src="${logoPath}" alt="Company Logo"/>
+                </a>
+            </div>
+            <div class="header__search">
+                <form action="${searchActionUrl}" method="get">
+                    <input type="text" name="q" placeholder="Search..."/>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="header__actions">
+                <a href="${loginUrl}" class="header__login">Login</a>
+                <a href="${cartUrl}" class="header__cart">Cart</a>
+            </div>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="${navItem1Url}">Products</a></li>
+                <li><a href="${navItem2Url}">Solutions</a></li>
+                <li><a href="${navItem3Url}">Support</a></li>
+                <li><a href="${navItem4Url}">Resources</a></li>
+                <li><a href="${navItem5Url}">About Us</a></li>
+            </ul>
+        </nav>
+    </div>    
+</body>
+</html>
