@@ -1,0 +1,43 @@
+// Define breakpoints for responsive design
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px,
+  'xxlarge': 1400px
+);
+
+// Define container widths for different breakpoints
+$container-widths: (
+  'small': 540px,
+  'medium': 720px,
+  'large': 960px,
+  'xlarge': 1140px,
+  'xxlarge': 1320px
+);
+
+// Mixin for generating container classes
+@mixin container($breakpoints, $container-widths) {
+  // Loop through each breakpoint
+  @each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+      max-width: map-get($container-widths, $breakpoint);
+    }
+  }
+
+  // Center the container
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  // Ensure full width for smaller screens
+  @media (max-width: map-get($breakpoints, 'small') - 1) {
+    width: 100%;
+  }
+}
+
+// Container class
+.container {
+  @include container($breakpoints, $container-widths);
+}
